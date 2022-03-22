@@ -1,0 +1,303 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  line-height: 1.2;
+}
+
+body {
+  height: auto;
+}
+
+section {
+  margin-block: 3em;
+}
+
+img {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+}
+
+.overlay {
+  background-color: #000000;
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.overlay img {
+  -webkit-filter: opacity(0.05);
+          filter: opacity(0.05);
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay img:last-child {
+  padding-bottom: 10em;
+}
+
+.container {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  z-index: 100;
+}
+
+.container .sidebar {
+  padding-top: 3em;
+  background-color: rgba(18, 27, 116, 0.15);
+  height: 100vh;
+  z-index: 1000;
+  width: 17%;
+  position: fixed;
+  top: 0;
+}
+
+.container .sidebar * {
+  color: white;
+}
+
+.container .sidebar .header-avatar {
+  padding: 2em 1em;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.container .sidebar .header-avatar .avatar-img {
+  background: center;
+  border: 2px solid white;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.container .sidebar .header-avatar .me {
+  text-align: center;
+  font-size: 1.75rem;
+  font-family: sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 1em 0 .2em 0;
+}
+
+.container .sidebar .menu-list {
+  list-style-type: none;
+  text-align: center;
+}
+
+.container .sidebar .menu-list .item-link {
+  width: 100%;
+  padding: 1.5em 2em;
+  border-top: 2px solid white;
+}
+
+.container .sidebar .menu-list .item-link:last-child {
+  border-bottom: 2px solid white;
+}
+
+.container .sidebar .menu-list .item-link:hover {
+  background-color: white;
+}
+
+.container .sidebar .menu-list .item-link:hover a {
+  color: #e42a62;
+}
+
+.container .sidebar .menu-list .item-link a {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.container .content {
+  z-index: 1000;
+  color: white;
+  text-align: center;
+  margin-left: 30%;
+  margin-block: 2em;
+}
+
+.container .content h3 {
+  font-size: 3rem;
+  text-transform: capitalize;
+  padding-block: .25em;
+}
+
+.container .content h3::after {
+  content: "";
+  display: block;
+  width: 15%;
+  height: 5px;
+  margin: 5px auto;
+  border-radius: 5px;
+  background-color: #e42a62;
+}
+
+.container .content .about .row {
+  margin-top: 5em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.671);
+  padding-bottom: 1.95em;
+}
+
+.container .content .about .row .col {
+  text-align: left;
+}
+
+.container .content .about .row .col * {
+  margin-block: 1em;
+}
+
+.container .content .about .row .col img {
+  width: 100%;
+}
+
+.container .content .about .row .col h4 {
+  padding-top: 2em;
+  font-size: 1.25rem;
+  margin-inline: 0;
+}
+
+.container .content .about .row .col button {
+  padding: 1em 1.75em;
+  text-transform: uppercase;
+  background-color: #121b74;
+  color: white;
+  border: none;
+}
+
+.container .content .about .row .col button:hover {
+  background-color: #e42a62;
+}
+
+.container .content .what-im .row, .container .content .work .row, .container .content .contact .row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  gap: 1.5em;
+  gap: .5em;
+  margin-top: 5em;
+}
+
+.container .content .what-im .row .col, .container .content .work .row .col, .container .content .contact .row .col {
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.178);
+  padding: 2em;
+}
+
+.container .content .what-im .row .col *, .container .content .work .row .col *, .container .content .contact .row .col * {
+  margin-block: .25em;
+  line-height: 1.5;
+}
+
+.container .content .what-im .row .col .icon, .container .content .work .row .col .icon, .container .content .contact .row .col .icon {
+  font-size: 3rem;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.container .content .what-im .row .col .icon i, .container .content .work .row .col .icon i, .container .content .contact .row .col .icon i {
+  border: 3px solid white;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+}
+
+.container .content .what-im .row .col h5, .container .content .work .row .col h5, .container .content .contact .row .col h5 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.container .content .work .row, .container .content .contact .row {
+  gap: .75em;
+}
+
+.container .content .work .row .col, .container .content .contact .row .col {
+  padding: 0;
+}
+
+.container .content .contact {
+  margin-top: 1em;
+}
+
+.container .content .contact .row {
+  margin-top: 1em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .content .contact .row .col {
+  background: none;
+}
+
+.container .content .contact .row .col input, .container .content .contact .row:nth-child(3) .col textarea {
+  width: 100%;
+  height: 50px;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.178);
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+}
+
+.container .content .contact .row .col input:focus, .container .content .contact .row:nth-child(3) .col textarea:focus {
+  outline: none;
+  cursor: default;
+}
+
+.container .content .contact .row:nth-child(2) {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  gap: 1.5em;
+}
+
+.container .content .contact .row:nth-child(3) {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  gap: 1.5em;
+}
+
+.container .content .contact .row:nth-child(3) textarea {
+  min-height: 150px;
+  max-height: 200px;
+  overflow-x: hidden;
+  resize: none;
+}
+
+.container .content .contact .row button {
+  background-color: #e42a62;
+  padding: .5em 2em;
+  color: white;
+  font-size: 1.25rem;
+  text-transform: capitalize;
+  border: none;
+}
+
+.container .content .contact .row button:hover {
+  background-color: #614ad3;
+}
+/*# sourceMappingURL=style.css.map */

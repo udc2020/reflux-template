@@ -1,0 +1,318 @@
+@import "./varaibles";
+@import "./functions";
+
+
+
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+   line-height: 1.2;
+}
+
+body {
+   height: auto;
+}
+
+
+section {
+   margin-block: 3em;
+}
+
+img {
+   width: 100%;
+}
+
+textarea {
+   width: 100%;
+}
+
+
+.overlay {
+   background-color: #000000;
+   width: 100%;
+   min-height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 10;
+
+   img {
+      filter: opacity(.05);
+      min-height: 100%;
+      background-size: cover;
+      background-position: center;
+
+      &:last-child {
+         padding-bottom: 10em;
+      }
+   }
+}
+
+.container {
+   position: relative;
+   max-width: 1200px;
+   margin: auto;
+   z-index: 100;
+
+   .sidebar {
+      padding-top: 3em;
+      background-color: $opacityPrimaryColor;
+      height: 100vh;
+      z-index: 1000;
+      width: 17%;
+      position: fixed;
+      top: 0;
+
+      * {
+         color: white;
+      }
+
+      .header-avatar {
+         padding: 2em 1em;
+         display: grid;
+         place-items: center;
+
+         .avatar-img {
+            background: center;
+            border: 2px solid white;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+         }
+
+         .me {
+            text-align: center;
+
+            font: {
+               size: 1.75rem;
+               family: sans-serif;
+               weight: bold;
+            }
+
+            letter-spacing: 2px;
+            padding: 1em 0 .2em 0;
+         }
+      }
+
+      .menu-list {
+         list-style-type: none;
+         text-align: center;
+
+         .item-link {
+            width: 100%;
+            padding: 1.5em 2em;
+            border-top: 2px solid white;
+
+
+
+            &:last-child {
+               border-bottom: 2px solid white;
+            }
+
+            &:hover{
+               background-color: white;
+            }
+
+            &:hover a {
+               color: $primaryColor;
+
+            }
+
+            a {
+               text: {
+                  decoration: none;
+                  transform: capitalize;
+               }
+
+
+            }
+
+
+
+         }
+      }
+
+   }
+
+   .content {
+
+      z-index: 1000;
+      color: white;
+      text-align: center;
+
+      margin-left: 30%;
+
+      @include heading;
+
+      .about {
+
+         .row {
+            margin-top: 5em;
+            @include column($col: 1fr 1fr);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.671);
+            padding-bottom: 1.95em;
+
+            .col {
+               text-align: left;
+
+
+               * {
+                  margin-block: 1em;
+               }
+
+               img {
+                  width: 100%;
+               }
+
+               h4 {
+                  padding-top: 2em;
+                  font-size: 1.25rem;
+                  margin-inline: 0;
+
+               }
+
+               button {
+                  padding: 1em 1.75em;
+                  text-transform: uppercase;
+                  background-color: $blueColor;
+                  color: white;
+                  border: none;
+
+                  &:hover {
+                     background-color: $primaryColor;
+
+                  }
+               }
+            }
+         }
+
+      }
+
+      .what-im {
+         .row {
+            @include column($col:repeat(2, 1fr));
+            gap: .5em;
+            margin-top: 5em;
+
+            .col {
+
+               text-align: left;
+               background-color: $transparentWhite;
+               padding: 2em;
+
+               * {
+                  margin-block: .25em;
+                  line-height: 1.5;
+
+               }
+
+               .icon {
+                  font-size: 3rem;
+                  @include centerElement;
+
+                  i {
+                     border: 3px solid white;
+                     border-radius: 100%;
+                     width: 100px;
+                     height: 100px;
+                     @include centerElement;
+                     padding: 10px;
+
+                  }
+               }
+
+               h5 {
+                  font-size: 1.5rem;
+                  text-transform: uppercase;
+               }
+            }
+
+         }
+      }
+
+      .work {
+         @extend .what-im;
+
+         .row {
+            gap: .75em;
+
+            .col {
+               padding: 0;
+            }
+         }
+
+      }
+
+      .contact {
+         @extend .work;
+         margin-top: 1em;
+
+         .row {
+            margin-top: 1em;
+            justify-content: center;
+
+            .col {
+               background: none;
+
+               input {
+                  width: 100%;
+                  height: 50px;
+                  padding: 1em;
+                  background-color: $transparentWhite;
+                  border: none;
+                  color: white;
+                  font-size: 1.25rem;
+
+                  &:focus {
+                     outline: none;
+                     cursor: default;
+                  }
+               }
+            }
+
+            &:nth-child(2) {
+
+               @include column($col:1fr);
+
+            }
+
+            &:nth-child(3) {
+               @include column($col:1fr);
+
+               textarea {
+                  @extend input;
+
+                  min-height: 150px;
+                  max-height: 200px;
+                  overflow-x: hidden;
+                  resize: none;
+
+               }
+
+
+            }
+
+            button {
+               background-color: $primaryColor;
+               padding: .5em 2em;
+               color: white;
+               font-size: 1.25rem;
+               text-transform: capitalize;
+               border: none;
+
+               &:hover {
+                  background-color: $secondColor;
+               }
+            }
+         }
+      }
+
+
+
+
+
+   }
+}

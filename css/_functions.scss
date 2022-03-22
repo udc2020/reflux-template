@@ -1,0 +1,31 @@
+@mixin heading {
+   margin-block: 2em;
+
+   h3 {
+      font-size: 3rem;
+      text-transform: capitalize;
+      padding-block: .25em;
+
+      &::after {
+         content: "";
+         display: block;
+         width: 15%;
+         height: 5px;
+         margin: 5px auto;
+         border-radius: 5px;
+         background-color: $primaryColor;
+      }
+   }
+}
+
+
+@mixin column ($col) {
+   display: grid;
+   grid-template-columns: $col;
+   gap: 1.5em;
+}
+
+@mixin centerElement {
+   display: grid;
+   place-items: center;
+}
